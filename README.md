@@ -11,6 +11,6 @@ Dependencies
 - [Python](https://www.python.org/)
 - [wkhtmltopdf](http://wkhtmltopdf.org)
 - [JSON](json.org)
-- HTML
+- [Pystache](https://github.com/defunkt/pystache)
 
 My main focus will be to generate swedish invoice templates as this is my native language. Support for english invoices will be added later on.
