@@ -1,0 +1,40 @@
+{
+	"invoice_date":"2014-07-21",
+	"invoice_no":"14072101",
+	"payment_terms":"30 days",
+
+	"company_info":{
+		"name":"My company",
+		"address":{
+			"street":"Company street",
+			"postal":"12345",
+			"city":"Company city"
+		},
+	"ref":"Company reference"
+	},
+
+	"customer_info":{
+		"name":"Customer company name",
+		"ref":"Customer reference",
+		"address":{
+			"street":"Customer street",
+			"postal":"54321",
+			"city":"Customer city"
+		}
+	},
+
+	"products":[
+		{
+			"description": "A nice product",
+			"price_no_vat": 100,
+			"quantity": 2,
+			"VAT": 0.25
+		},
+		{
+			"description": "A nice product",
+			"price_no_vat": 200,
+			"quantity": 1,
+			"VAT": 0.25
+		}
+	]
+}
