@@ -1,7 +1,13 @@
 {
-	"invoice_date":"2014-07-21",
-	"invoice_no":"14072101",
-	"payment_terms":"30 days",
+	"general_spec":{
+		"payment_terms":"30 days"
+	},
+
+	"invoice_spec":{
+		"ref":"Company reference"
+		"invoice_date":"2014-07-21",
+		"invoice_no":"14072101",
+	},
 
 	"company_info":{
 		"name":"My company",
@@ -10,7 +16,19 @@
 			"postal":"12345",
 			"city":"Company city"
 		},
-	"ref":"Company reference"
+
+		"contact":{
+			"phone":"08-123 45 67",
+			"mobile":"070-123 45 67",
+			"email":"info@company.com",
+			"web":"company.com",
+		},
+
+		"id":{
+			"org_id":"123456-789",
+			"vat_id":"SE12345678901",
+			"bank_id":"1234-5678"
+		}
 	},
 
 	"customer_info":{
@@ -28,13 +46,13 @@
 			"description": "A nice product",
 			"price_no_vat": 100,
 			"quantity": 2,
-			"VAT": 0.25
+			"vat": 0.25
 		},
 		{
 			"description": "A nice product",
 			"price_no_vat": 200,
 			"quantity": 1,
-			"VAT": 0.25
+			"vat": 0.25
 		}
 	]
 }
