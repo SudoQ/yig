@@ -1,6 +1,6 @@
 {
 	"general_spec":{
-		"payment_terms":"30 days"
+		"payment_terms":30
 	},
 
 	"invoice_spec":{
