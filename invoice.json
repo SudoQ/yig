@@ -49,7 +49,7 @@
 			"vat": 0.25
 		},
 		{
-			"description": "A nice product",
+			"description": "Another nice product",
 			"price_no_vat": 200,
 			"quantity": 1,
 			"vat": 0.25
