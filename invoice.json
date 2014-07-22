@@ -6,7 +6,7 @@
 	"invoice_spec":{
 		"ref":"Company reference"
 		"invoice_date":"2014-07-21",
-		"invoice_no":"14072101",
+		"invoice_id":"14072101",
 	},
 
 	"company_info":{
