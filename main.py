@@ -1,4 +1,4 @@
-#coding:utf-8
+#coding=utf-8
 
 #imports
 import pystache as ps
@@ -10,12 +10,12 @@ def main():
 	# Create Invoice with JSON dictionary
 	f = open("invoice.json", "r")
 	file_content = f.read()
-	print file_content
 	content = json.loads(file_content)
-	print content
 	invoice = Invoice(content)
-	renderer = ps.Renderer(file_encoding="utf-8")
-	print renderer.render(invoice)
+	renderer = ps.Renderer(file_encoding="utf-8", string_encoding="utf-8")
+	html = renderer.render(invoice)
+	fout = open("invoice.html", "w")
+	fout.write(html.encode("UTF-8"))
 
 if __name__ == "__main__":
 	main()
