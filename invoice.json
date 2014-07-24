@@ -1,6 +1,7 @@
 {
 	"general_spec":{
-		"payment_terms":30
+		"payment_terms":30,
+		"currency":"SEK"
 	},
 
 	"invoice_spec":{
