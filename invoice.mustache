@@ -5,6 +5,19 @@
 		<link rel="stylesheet" type="text/css" href="invoice_style.css">
 	</head>
 	<body>
+		<p>{{paymentTerms}}
+		<p>{{companyRef}}
+		<p>{{invoiceDate}}
+		<p>{{invoiceId}}
+		<div>
+			{{#products}}
+			<p>{{description}}
+			<p>{{price_no_vat}}
+			<p>{{quantity}}
+			<p>{{vat}}
+
+			{{/products}}
+		</div>
 		<!--
 		<p id=name>company_name
 		<p>Faktura
@@ -17,6 +30,7 @@
 		<p>customer_street
 		<p>customer_postal customer_city
 		-->
+		<!--
 		<div id="wrapper">
 			<div id="header">Header</div>
 			<div id="content">
@@ -27,5 +41,6 @@
 			<div id="footer"></div>
 			<div id="bottom"></div>
 		</div>
+		-->
 	</body>
 </html>
