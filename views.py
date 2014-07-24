@@ -2,6 +2,8 @@
 class Invoice(object):
 	def __init__(self, content):
 		self._json = content
+		self._json['product_aggr'] = {}
+		self.sumProducts()
 	
 	# General Specifications
 	def paymentTerms(self):
@@ -74,12 +76,45 @@ class Invoice(object):
 	# Products
 
 	def products(self):
+		totalSum = 0.0
+		totalVat = 0.0
+
 		for product in self._json['products']:
 			# Calculate sum
-			product['sum'] = product['price_no_vat'] * product['quantity']
+			product['sumExVat'] = product['price_no_vat'] * product['quantity']
+
+			# Calculate sum of vat
+			product['sumVat'] = product['sumExVat'] * product['vat']
+
+			# Calculate total sum including vat
+			product['sumInclVat'] = product['sumExVat'] + product['sumVat']
+
+			# Prettify the output
+			product['prettySumInclVat'] = self.currencyToString(product['sumInclVat'])
+			# Pretty Vat percentage
+			product['prettyVat'] = "%d %%"%(product['vat']*100)
+
+			#Overhead aggregation
+			totalSum += product['sumExVat']
+			totalVat += product['sumVat']
 
 		return self._json['products']
 
+	def product_aggr(self):
+		self._json['product_aggr']['totalSum'] = self.currencyToString(self._totalSum)
+		self._json['product_aggr']['totalVat'] = self.currencyToString(self._totalVat)
+		return self._json['product_aggr']
+	
 	# Helper functions
 	def dateToString(self, json):
 		return "%d-%d-%d"%(json['year'], json['month'], json['day'])
+
+	def currencyToString(self, amount):
+		return "%.2f %s"%(amount, self._json['general_spec']['currency'])
+
+	def sumProducts(self):
+		self._totalSum = 0
+		self._totalVat = 0
+		for product in self._json['products']:
+			self._totalSum += product['price_no_vat'] * product['quantity']
+			self._totalVat += self._totalSum * product['vat']
