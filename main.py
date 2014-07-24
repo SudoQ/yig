@@ -14,7 +14,7 @@ def main():
 	content = json.loads(file_content)
 	print content
 	invoice = Invoice(content)
-	renderer = ps.Renderer()
+	renderer = ps.Renderer(file_encoding="utf-8")
 	print renderer.render(invoice)
 
 if __name__ == "__main__":
