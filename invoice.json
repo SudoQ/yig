@@ -4,13 +4,13 @@
 	},
 
 	"invoice_spec":{
-		"ref":"Company reference"
+		"ref":"Company reference",
 		"invoice_date":{
 			"year": 2014,
 			"month": 7,
 			"day": 21
-		}
-		"invoice_id":"14072101",
+		},
+		"invoice_id":"14072101"
 	},
 
 	"company_info":{
@@ -25,7 +25,7 @@
 			"phone":"08-123 45 67",
 			"mobile":"070-123 45 67",
 			"email":"info@company.com",
-			"web":"company.com",
+			"web":"company.com"
 		},
 
 		"id":{
