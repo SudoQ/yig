@@ -20,8 +20,8 @@
 			{{/products}}
 		</div>
 		-->
-		<p><b>{{companyName}}</b>
-		<p>Faktura
+		<h1>{{companyName}}</h1>
+		<h2>Faktura</h2>
 		<p>Fakturadatum: {{invoiceDate}}
 		<p>Fakturanummer: {{invoiceId}}
 		<p>Betalningsvilkor: {{paymentTerms}} dagar
@@ -31,23 +31,32 @@
 		<p>{{customerStreet}}
 		<p>{{customerPostal}} {{customerCity}}
 		<p>Specification
-		<table border=1>
+		<table border=0 cellpadding=10>
 			<tr>
 				<td>Beskrivning</td>
-				<td>Styck pris ex moms</td>
+				<td>Styckpris</td>
 				<td>Antal</td>
 				<td>Momssats</td>
-				<td>Totalsumma ex moms</td>
+				<td>Nettopris</td>
+				<td>Momsbelopp</td>
+				<td>Bruttopris</td>
 			{{#products}}
 			<tr>
 				<td>{{description}}</td>
 				<td>{{price_no_vat}}</td>
 				<td>{{quantity}}</td>
-				<td>{{vat}}</td>
-				<td>{{sum}}</td>
+				<td>{{prettyVat}}</td>
+				<td>{{sumExVat}}</td>
+				<td>{{sumVat}}</td>
+				<td>{{prettySumInclVat}}</td>
 			</tr>
 			{{/products}}
 		</table>
+		<br><br>
+		{{#product_aggr}}
+		<p>Totalt momsbelopp: {{totalVat}}
+		<p><b>Att betala: {{totalSum}}<b>
+		{{/product_aggr}}
 		<!--
 		<div id="wrapper">
 			<div id="header">Header</div>
