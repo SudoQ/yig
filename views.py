@@ -58,7 +58,7 @@ class Invoice(object):
 	def customerName(self):
 		return self._json['customer_info']['name']
 
-	def customRef(self):
+	def customerRef(self):
 		return self._json['customer_info']['ref']
 
 	# Customer Address
@@ -74,6 +74,10 @@ class Invoice(object):
 	# Products
 
 	def products(self):
+		for product in self._json['products']:
+			# Calculate sum
+			product['sum'] = product['price_no_vat'] * product['quantity']
+
 		return self._json['products']
 
 	# Helper functions
