@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="invoice_style.css">
 	</head>
 	<body>
+		<!--
 		<p>{{paymentTerms}}
 		<p>{{companyRef}}
 		<p>{{invoiceDate}}
@@ -18,18 +19,35 @@
 
 			{{/products}}
 		</div>
-		<!--
-		<p id=name>company_name
-		<p>Faktura
-		<p>Fakturadatum: invoice_date
-		<p>Fakturanummer: invoice_id
-		<p>Betalningsvilkor: payment_terms dagar
-		<p>Vår referens: company_ref
-		<p>Er referens: customer_ref
-		<p>Kund: customer_name
-		<p>customer_street
-		<p>customer_postal customer_city
 		-->
+		<p><b>{{companyName}}</b>
+		<p>Faktura
+		<p>Fakturadatum: {{invoiceDate}}
+		<p>Fakturanummer: {{invoiceId}}
+		<p>Betalningsvilkor: {{paymentTerms}} dagar
+		<p>Vår referens: {{companyRef}}
+		<p>Er referens: {{customerRef}}
+		<p>Kund: {{customerName}}
+		<p>{{customerStreet}}
+		<p>{{customerPostal}} {{customerCity}}
+		<p>Specification
+		<table border=1>
+			<tr>
+				<td>Beskrivning</td>
+				<td>Styck pris ex moms</td>
+				<td>Antal</td>
+				<td>Momssats</td>
+				<td>Totalsumma ex moms</td>
+			{{#products}}
+			<tr>
+				<td>{{description}}</td>
+				<td>{{price_no_vat}}</td>
+				<td>{{quantity}}</td>
+				<td>{{vat}}</td>
+				<td>{{sum}}</td>
+			</tr>
+			{{/products}}
+		</table>
 		<!--
 		<div id="wrapper">
 			<div id="header">Header</div>
