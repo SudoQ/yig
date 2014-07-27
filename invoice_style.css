@@ -9,6 +9,14 @@ div {
 	border: 0px solid #bbb;
 }
 
+table {
+	border-collapse: collapse;
+}
+
+td, th, tr {
+	padding: 10px;
+}
+
 #wrapper {
 }
 
@@ -49,7 +57,7 @@ div {
 
 .content-footer-box {
 	display:inline-block;
-	text-align: center;
-	width: 10%;
-
+	vertical-align: top;
+	text-align: left;
+	margin-right: 2%;
 }
