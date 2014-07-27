@@ -29,25 +29,30 @@
 			<div id="content-main">
 				<h3>Specification</h3>
 				<table>
-					<tr>
-						<td>Beskrivning</td>
-						<td>Styckpris</td>
-						<td>Antal</td>
-						<td>Momssats</td>
-						<td>Nettopris</td>
-						<td>Momsbelopp</td>
-						<td>Bruttopris</td>
-					{{#products}}
-					<tr>
-						<td>{{description}}</td>
-						<td>{{price_no_vat}}</td>
-						<td>{{quantity}}</td>
-						<td>{{prettyVat}}</td>
-						<td>{{sumExVat}}</td>
-						<td>{{sumVat}}</td>
-						<td>{{prettySumInclVat}}</td>
-					</tr>
-					{{/products}}
+					<thead>
+						<tr>
+							<th>Beskrivning</th>
+							<th>Styckpris</th>
+							<th>Antal</th>
+							<th>Momssats</th>
+							<th>Nettopris</th>
+							<th>Momsbelopp</th>
+							<th>Bruttopris</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#products}}
+						<tr>
+							<td>{{description}}</td>
+							<td>{{price_no_vat}}</td>
+							<td>{{quantity}}</td>
+							<td>{{prettyVat}}</td>
+							<td>{{sumExVat}}</td>
+							<td>{{sumVat}}</td>
+							<td>{{prettySumInclVat}}</td>
+						</tr>
+						{{/products}}
+					</tbody>
 				</table>
 			</div>
 			<div id="content-footer">
@@ -59,25 +64,28 @@
 		</div>
 		<div id="footer">
 			<div id="footer">
-				<div class="content-footer-box">
-					<p> 01
-					<p> 02
-					<p> 03
+				<div class="content-footer-box" style="width:auto">
+					<p>Adress:
+					<p>{{companyName}}
+					<p>{{companyStreet}}
+					<p>{{companyCity}} {{companyPostal}}
 				</div>
 				<div class="content-footer-box">
-					<p> 04
-					<p> 05
-					<p> 06
+					<p> Telefon:
+					<p> {{companyPhone}}
+					<p> {{companyMobile}}
 				</div>
 				<div class="content-footer-box">
-					<p> 07
-					<p> 08
-					<p> 09
+					<p> E-post:
+					<p> {{companyEmail}}
+					<p> Webb:
+					<p> {{companyWeb}}
 				</div>
 				<div class="content-footer-box">
-					<p> 10
-					<p> 11
-					<p> 12
+					<p> Org.nummer: {{companyOrgId}}
+					<p> Momsregnr: {{companyVatId}}
+					<p> {{companyBankId}}
+					<p> Godkänd för F-skatt
 				</div>
 			</div>
 		</div>
