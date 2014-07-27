@@ -5,58 +5,82 @@
 		<link rel="stylesheet" type="text/css" href="invoice_style.css">
 	</head>
 	<body>
-		<!--
-		<p>{{paymentTerms}}
-		<p>{{companyRef}}
-		<p>{{invoiceDate}}
-		<p>{{invoiceId}}
-		<div>
-			{{#products}}
-			<p>{{description}}
-			<p>{{price_no_vat}}
-			<p>{{quantity}}
-			<p>{{vat}}
-
-			{{/products}}
+		<div id="content">
+			<div id="header">
+				<h1>{{companyName}}</h1>
+				<h2 class="text-right">Faktura</h2>
+			</div>
 		</div>
-		-->
-		<h1>{{companyName}}</h1>
-		<h2>Faktura</h2>
-		<p>Fakturadatum: {{invoiceDate}}
-		<p>Fakturanummer: {{invoiceId}}
-		<p>Betalningsvilkor: {{paymentTerms}} dagar
-		<p>Vår referens: {{companyRef}}
-		<p>Er referens: {{customerRef}}
-		<p>Kund: {{customerName}}
-		<p>{{customerStreet}}
-		<p>{{customerPostal}} {{customerCity}}
-		<p>Specification
-		<table border=0 cellpadding=10>
-			<tr>
-				<td>Beskrivning</td>
-				<td>Styckpris</td>
-				<td>Antal</td>
-				<td>Momssats</td>
-				<td>Nettopris</td>
-				<td>Momsbelopp</td>
-				<td>Bruttopris</td>
-			{{#products}}
-			<tr>
-				<td>{{description}}</td>
-				<td>{{price_no_vat}}</td>
-				<td>{{quantity}}</td>
-				<td>{{prettyVat}}</td>
-				<td>{{sumExVat}}</td>
-				<td>{{sumVat}}</td>
-				<td>{{prettySumInclVat}}</td>
-			</tr>
-			{{/products}}
-		</table>
-		<br><br>
-		{{#product_aggr}}
-		<p>Totalt momsbelopp: {{totalVat}}
-		<p><b>Att betala: {{totalSum}}<b>
-		{{/product_aggr}}
+		<div id="content">
+			<div id="content-header">
+				<div class="content-header-box">
+					<p>Fakturadatum: {{invoiceDate}}
+					<p>Fakturanummer: {{invoiceId}}
+					<p>Betalningsvilkor: {{paymentTerms}} dagar
+					<p>Vår referens: {{companyRef}}
+					<p>Er referens: {{customerRef}}
+				</div>
+				<div class="content-header-box">
+					<p>Kund: {{customerName}}
+					<p>{{customerStreet}}
+					<p>{{customerPostal}} {{customerCity}}
+				</div>
+			</div>
+			<div id="content-main">
+				<h3>Specification</h3>
+				<table>
+					<tr>
+						<td>Beskrivning</td>
+						<td>Styckpris</td>
+						<td>Antal</td>
+						<td>Momssats</td>
+						<td>Nettopris</td>
+						<td>Momsbelopp</td>
+						<td>Bruttopris</td>
+					{{#products}}
+					<tr>
+						<td>{{description}}</td>
+						<td>{{price_no_vat}}</td>
+						<td>{{quantity}}</td>
+						<td>{{prettyVat}}</td>
+						<td>{{sumExVat}}</td>
+						<td>{{sumVat}}</td>
+						<td>{{prettySumInclVat}}</td>
+					</tr>
+					{{/products}}
+				</table>
+			</div>
+			<div id="content-footer">
+				{{#product_aggr}}
+				<p>Totalt momsbelopp: {{totalVat}}
+				<p><b>Att betala: {{totalSum}}</b>
+				{{/product_aggr}}
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footer">
+				<div class="content-footer-box">
+					<p> 01
+					<p> 02
+					<p> 03
+				</div>
+				<div class="content-footer-box">
+					<p> 04
+					<p> 05
+					<p> 06
+				</div>
+				<div class="content-footer-box">
+					<p> 07
+					<p> 08
+					<p> 09
+				</div>
+				<div class="content-footer-box">
+					<p> 10
+					<p> 11
+					<p> 12
+				</div>
+			</div>
+		</div>
 		<!--
 		<div id="wrapper">
 			<div id="header">Header</div>
