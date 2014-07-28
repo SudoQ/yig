@@ -67,10 +67,10 @@ td, th, tr {
 }
 
 .content-footer-box {
-	text-align:right;
+	text-align:left;
 	border: 1px solid #000000;
-	width: 14em;
-	margin-left: 70%;
+	width: 0% auto;
+	margin-left: 54%;
 	padding: 2%;
 	font-size: 1em;
 	font-weight: bold;
