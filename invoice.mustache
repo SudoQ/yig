@@ -17,6 +17,7 @@
 					<p>Fakturadatum: {{invoiceDate}}
 					<p>Fakturanummer: {{invoiceId}}
 					<p>Betalningsvilkor: {{paymentTerms}} dagar
+					<p>Förfallodatum: {{expirationDate}}
 					<p>Vår referens: {{companyRef}}
 					<p>Er referens: {{customerRef}}
 				</div>
@@ -33,23 +34,23 @@
 					<thead>
 						<tr>
 							<th>Beskrivning</th>
-							<th>Styckpris</th>
 							<th>Antal</th>
-							<th>Momssats</th>
-							<th>Nettopris</th>
-							<th>Momsbelopp</th>
-							<th>Bruttopris</th>
+							<th>À pris</th>
+							<!--<th>Momssats</th>-->
+							<!--<th>Nettopris</th>-->
+							<!--<th>Momsbelopp</th>-->
+							<th>Summa</th>
 						</tr>
 					</thead>
 					<tbody>
 						{{#products}}
 						<tr>
 							<td>{{description}}</td>
-							<td>{{price_no_vat}} {{currency}}</td>
 							<td>{{quantity}}</td>
-							<td>{{prettyVat}}</td>
-							<td>{{sumExVat}} {{currency}}</td>
-							<td>{{sumVat}} {{currency}}</td>
+							<td>{{price_no_vat}} {{currency}}</td>
+							<!--<td>{{prettyVat}}</td>-->
+							<!--<td>{{sumExVat}} {{currency}}</td>-->
+							<!--<td>{{sumVat}} {{currency}}</td>-->
 							<td>{{sumInclVat}} {{currency}}</td>
 						</tr>
 						{{/products}}
@@ -59,7 +60,7 @@
 			<div id="content-footer">
 				{{#product_aggr}}
 				<p class="content-footer-box">
-				Totalt momsbelopp: {{totalVat}} {{currency}}
+				Totalt momsbelopp, 25%: {{totalVat}} {{currency}}
 				</p>
 				<p class="content-footer-box">
 				Att betala: {{totalSum}} {{currency}}
