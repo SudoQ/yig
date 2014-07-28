@@ -58,6 +58,10 @@ td, th, tr {
 }
 
 .content-footer-box {
+	text-align:right;
+}
+
+.footer-box {
 	display:inline-block;
 	vertical-align: top;
 	text-align: left;
