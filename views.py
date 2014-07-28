@@ -76,9 +76,6 @@ class Invoice(object):
 	# Products
 
 	def products(self):
-		totalSum = 0.0
-		totalVat = 0.0
-
 		for product in self._json['products']:
 			# Calculate sum
 			product['sumExVat'] = product['price_no_vat'] * product['quantity']
@@ -91,10 +88,6 @@ class Invoice(object):
 
 			# Pretty Vat percentage
 			product['prettyVat'] = "%d %%"%(product['vat']*100)
-
-			#Overhead aggregation
-			totalSum += product['sumExVat']
-			totalVat += product['sumVat']
 
 		return self._json['products']
 
@@ -114,5 +107,8 @@ class Invoice(object):
 		self._totalSum = 0
 		self._totalVat = 0
 		for product in self._json['products']:
-			self._totalSum += product['price_no_vat'] * product['quantity']
-			self._totalVat += self._totalSum * product['vat']
+			productSum = product['price_no_vat'] * product['quantity']
+			productVat = productSum * product['vat']
+			productTotal = productSum + productVat
+			self._totalSum += productTotal
+			self._totalVat += productVat
