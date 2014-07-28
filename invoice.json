@@ -1,7 +1,8 @@
 {
 	"general_spec":{
 		"payment_terms":30,
-		"currency":"SEK"
+		"currency":"SEK",
+		"vat":0.25
 	},
 
 	"invoice_spec":{
