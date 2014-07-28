@@ -1,4 +1,6 @@
 #coding=utf-8
+import datetime
+
 class Invoice(object):
 	def __init__(self, content):
 		self._json = content
@@ -93,6 +95,13 @@ class Invoice(object):
 
 	def currency(self):
 		return self._json['general_spec']['currency']
+
+	def expirationDate(self):
+		# invoice date + payment terms
+		dt = datetime.timedelta(days=int(self.paymentTerms()))
+		jsonDate = self._json['invoice_spec']['invoice_date']
+		invoiceDate = datetime.date(jsonDate['year'], jsonDate['month'], jsonDate['day'])
+		return invoiceDate + dt
 
 	def product_aggr(self):
 		self._json['product_aggr']['totalSum'] = self._totalSum
