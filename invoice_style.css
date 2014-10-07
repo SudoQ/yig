@@ -7,22 +7,46 @@ div {
 	margin: 0em;
 	padding: 0em;
 	border: 0px solid #bbb;
-
 }
 
 table {
 	border-collapse: collapse;
 }
 
-td, th, tr {
+th {
+	padding: 5px;
+	text-align: left;
+}
+
+td, tr {
+	border: 0px solid #000000;
+	padding: 5px;
+}
+
+hr {
 	border: 1px solid #000000;
-	padding: 10px;
+}
+
+#spec_table_head {
+	border: 1px solid #000000;
 }
 
 #wrapper {
 }
 
 #header {
+}
+
+#header-left {
+	display:inline-block;
+	width: 20em;
+	vertical-align: top;
+}
+
+#header-right{
+	display:inline-block;
+	width: 20em;
+	vertical-align: top;
 }
 
 #content {
@@ -32,11 +56,11 @@ td, th, tr {
 }
 
 #content-main {
+	height: 30em;
 }
 
 #content-footer {
 }
-
 
 .content-header-box {
 	display:inline-block;
@@ -71,6 +95,14 @@ td, th, tr {
 	width: 100%;
 }
 
+table {
+	width: 100%;
+}
+
+#sum_table: {
+	border: 0px;
+}
+
 .content-footer-box {
 	text-align:left;
 	border: 1px solid #000000;
@@ -89,6 +121,6 @@ td, th, tr {
 	display:inline-block;
 	vertical-align: top;
 	text-align: left;
-	margin-right: 2%;
-	width: 12em;
+	margin-right: 1%;
+	width: 10em;
 }

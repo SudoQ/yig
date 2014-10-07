@@ -106,6 +106,7 @@ class Invoice(object):
 	def product_aggr(self):
 		self._json['product_aggr']['totalSum'] = self._totalSum
 		self._json['product_aggr']['totalVat'] = self._totalVat
+		self._json['product_aggr']['totalExclVat'] = self._totalSum - self._totalVat
 		return self._json['product_aggr']
 
 	# Helper functions
