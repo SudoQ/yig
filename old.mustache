@@ -6,56 +6,30 @@
 	</head>
 	<body>
 		<div id="header">
-			<div id="header-top">
-
-				<div id="header-left">
-					<div id="logo">
-						<h1>{{companyName}}</h1>
-					</div>
-					<div id="address">
-						Fakturaadress:<br>
-						<p>{{customerName}}
-						<p>{{customerStreet}}
-						<p>{{customerPostal}} {{customerCity}}
-					</div>
+			<h1>{{companyName}}</h1>
+			<h2 class="text-left">Faktura</h2>
+		</div>
+		<div id="content">
+			<div id="content-header">
+				<div class="content-header-box">
+					<p>Fakturadatum: {{invoiceDate}}
+					<p>Fakturanummer: {{invoiceId}}
+					<p>Betalningsvilkor: {{paymentTerms}} dagar
+					<p>Förfallodatum: {{expirationDate}}
+					<p>Vår referens: {{companyRef}}
+					<p>Er referens: {{customerRef}}
 				</div>
-
-				<div id="header-right">
-					<div id="header-right-top" class="header-box">
-						Faktura
-					</div>
-					<div id="header-right-bottom">
-						<div id="header-right-bottom-left" class="header-box">
-							Fakturanummer: {{invoiceId}}
-						</div>
-						<div id="header-right-bottom-right" class="header-box">
-							Fakturadatum: {{invoiceDate}}
-						</div>
-					</div>
-				</div>
-
-			</div> <!-- header-top -->
-			<div id="header-bottom">
-				<div id="header-bottom-left" class="header-bottom-box">
-				</div>
-				<div id="header-bottom-right" class="header-bottom-box">
-					<!-- Maybe table here.."-->
-					<p><b>Er Referens</b>: {{customerRef}}</p>
-					<p><b>Vår Referens:</b> {{companyRef}}</p>
-					<p><b>Betalningsvilkor:</b> {{paymentTerms}} dagar</p>
-					<p><b>Förfallodatum:</b> {{expirationDate}}</p>
+				<div class="content-header-box">
+					<p>Kund: {{customerName}}
+					<p>{{customerStreet}}
+					<p>{{customerPostal}} {{customerCity}}
 				</div>
 			</div>
-		</div>
-		<div id="spec">
-			<div id="spec-header">
+			<div id="content-main">
 				<h3 id="specification">Specifikation</h3>
 				<hr>
-			</div>
-			<div id="spec-main">
-
-				<table id="spec-table">
-					<thead id="spec-table-head">
+				<table id="spec_table">
+					<thead id="spec_table_head">
 						<tr>
 							<th>Beskrivning</th>
 							<th>Antal</th>
@@ -80,10 +54,9 @@
 						{{/products}}
 					</tbody>
 				</table>
-			</div> <!-- spec-main -->
-
-			<div id="spec-footer">
-				<table id="sum-table" class="no-border">
+			</div>
+			<div id="content-footer">
+				<table id="sum_table" class="no-border">
 					<thead>
 						<tr>
 							<th>Netto</th>
@@ -115,8 +88,8 @@
 				</p>
 				{{/product_aggr}}
 				-->
-			</div> <!-- spec-footer -->
-		</div> <!-- spec -->
+			</div>
+		</div>
 		<div id="footer">
 			<hr>
 			<div id="footer">

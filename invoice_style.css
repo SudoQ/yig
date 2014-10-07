@@ -6,11 +6,12 @@ body {
 div {
 	margin: 0em;
 	padding: 0em;
-	border: 0px solid #bbb;
+	border: 1px solid #bbb;
 }
 
 table {
 	border-collapse: collapse;
+	width: 100%;
 }
 
 th {
@@ -27,39 +28,37 @@ hr {
 	border: 1px solid #000000;
 }
 
-#spec_table_head {
-	border: 1px solid #000000;
-}
-
-#wrapper {
-}
-
-#header {
-}
-
 #header-left {
 	display:inline-block;
-	width: 20em;
 	vertical-align: top;
+	width:40%;
 }
 
-#header-right{
+#header-right {
 	display:inline-block;
-	width: 20em;
 	vertical-align: top;
+	width:40%;
 }
 
-#content {
+.header-box {
+	display:inline-block;
+	width: 100% auto;
+	border: 1px solid #000000;
+	padding: 2%;
+	margin-right: 5%;
+	vertical-align: top;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-khtml-border-radius: 10px;
 }
 
-#content-header {
-}
-
-#content-main {
-	height: 30em;
-}
-
-#content-footer {
+.header-bottom-box {
+	display:inline-block;
+	vertical-align: top;
+	text-align: left;
+	margin-right: 1%;
+	width: 40%;
 }
 
 .content-header-box {
@@ -75,6 +74,7 @@ hr {
 	-khtml-border-radius: 10px;
 }
 
+
 .text-right {
 	text-align: right;
 }
@@ -83,25 +83,24 @@ hr {
 	text-align: left;
 }
 
-#footer {
-}
-
 #specification {
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
-#spec_table {
+#spec-table-head {
+	border: 1px solid #000000;
+}
+
+#spec-table {
 	width: 100%;
 }
 
-table {
-	width: 100%;
-}
-
-#sum_table: {
+#sum-table: {
 	border: 0px;
 }
+
+
 
 .content-footer-box {
 	text-align:left;
