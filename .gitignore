@@ -54,3 +54,6 @@ docs/_build/
 
 # Vim
 *.swp
+
+# Project specific
+logo.png
