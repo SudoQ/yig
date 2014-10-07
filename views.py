@@ -110,7 +110,9 @@ class Invoice(object):
 
 	# Helper functions
 	def dateToString(self, json):
-		return "%d-%d-%d"%(json['year'], json['month'], json['day'])
+		zeroPrefix = (lambda s: "0" + str(s) if int(s) < 10 else s)
+		strDate = map(zeroPrefix, (json['year'], json['month'], json['day']))
+		return "%s-%s-%s"%(strDate[0], strDate[1], strDate[2])
 
 	def sumProducts(self):
 		self._totalSum = 0
