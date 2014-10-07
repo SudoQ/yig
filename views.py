@@ -6,11 +6,11 @@ class Invoice(object):
 		self._json = content
 		self._json['product_aggr'] = {}
 		self.sumProducts()
-	
+
 	# General Specifications
 	def paymentTerms(self):
 		return self._json['general_spec']['payment_terms']
-	
+
 	# Invoice Specifications
 	def companyRef(self):
 		return self._json['invoice_spec']['ref']
@@ -21,10 +21,10 @@ class Invoice(object):
 	def invoiceId(self):
 		return self._json['invoice_spec']['invoice_id']
 
-	# Company information	
+	# Company information
 	def companyName(self):
 		return self._json['company_info']['name']
-	
+
 	# Company Address
 	def companyStreet(self):
 		return self._json['company_info']['address']['street']
@@ -58,7 +58,7 @@ class Invoice(object):
 	def companyBankId(self):
 		return self._json['company_info']['id']['bank_id']
 
-	# Customer information	
+	# Customer information
 	def customerName(self):
 		return self._json['customer_info']['name']
 
@@ -107,7 +107,7 @@ class Invoice(object):
 		self._json['product_aggr']['totalSum'] = self._totalSum
 		self._json['product_aggr']['totalVat'] = self._totalVat
 		return self._json['product_aggr']
-	
+
 	# Helper functions
 	def dateToString(self, json):
 		return "%d-%d-%d"%(json['year'], json['month'], json['day'])
