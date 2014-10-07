@@ -7,7 +7,6 @@
 	<body>
 		<div id="header">
 			<div id="header-top">
-
 				<div id="header-left">
 					<div id="logo">
 						<h1>{{companyName}}</h1>
@@ -120,40 +119,48 @@
 		<div id="footer">
 			<hr>
 			<div id="footer">
-				<div class="footer-box">
-					<p>
-						Adress:<br>
-						{{companyName}}<br>
-						{{companyStreet}}<br>
-						{{companyCity}} {{companyPostal}}
-					</p>
+				<div id="footer-address">
+					<div class="footer-box">
+						<p>
+							<b>Adress:</b><br>
+							{{companyName}}<br>
+							{{companyStreet}}<br>
+							{{companyCity}} {{companyPostal}}
+						</p>
+					</div>
 				</div>
-				<div class="footer-box">
-					<p>
-						Telefon:<br>
-						{{companyPhone}}<br>
-						{{companyMobile}}
-					</p>
-				</div>
-				<div class="footer-box">
-					<p>
-						E-post:<br>
-						{{companyEmail}}<br>
-						Webb:<br>
-						{{companyWeb}}
-					</p>
-				</div>
-				<div class="footer-box">
-					<p>
-						Org.nummer: {{companyOrgId}}<br>
-						Momsregnr: {{companyVatId}}<br>
-						Godkänd för F-skatt
-					</p>
-				</div>
-				<div class="footer-box">
-					<p>
-						Bankgiro: {{companyBankId}}<br>
-					</p>
+				<div id="footer-other">
+					<div class="block">
+						<div class="footer-box">
+							<p>
+								<b>Telefon:</b><br>
+								{{companyPhone}}<br>
+								{{companyMobile}}
+							</p>
+						</div>
+						<div class="footer-box">
+							<p>
+								<b>E-post:</b><br>
+								{{companyEmail}}<br>
+								<b>Webb:</b><br>
+								{{companyWeb}}
+							</p>
+						</div>
+					</div>
+					<div class="block">
+						<div class="footer-box">
+							<p>
+								<b>Bankgiro</b><br>{{companyBankId}}
+							</p>
+						</div>
+						<div class="footer-box">
+							<p>
+								<b>Org.nummer:</b> {{companyOrgId}}<br>
+								<b>Momsregnr:</b> {{companyVatId}}<br>
+								Godkänd för F-skatt
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

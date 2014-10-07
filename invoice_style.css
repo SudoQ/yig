@@ -114,26 +114,31 @@ p {
 	border: 0px;
 }
 
+#footer-address {
+	display:inline-block;
+	width: 18em;
+	vertical-align: top;
+}
 
+#footer-other {
+	display:inline-block;
+	width: 38em;
+	vertical-align: top;
+}
 
-.content-footer-box {
-	text-align:left;
-	border: 1px solid #000000;
-	width: 0% auto;
-	margin-left: 54%;
-	padding: 2%;
-	font-size: 1em;
-	font-weight: bold;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	-khtml-border-radius: 10px;
+.block {
+	display:inline-block;
+	width:12em;
+	vertical-align: top;
+	margin-left: 5em;
 }
 
 .footer-box {
 	display:inline-block;
 	vertical-align: top;
 	text-align: left;
-	margin-right: 1%;
-	width: 10em;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	width: 12em;
+	height: 6em;
 }
