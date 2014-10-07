@@ -6,7 +6,7 @@ body {
 div {
 	margin: 0em;
 	padding: 0em;
-	border: 1px solid #bbb;
+	border: 0px solid #bbb;
 }
 
 table {
@@ -28,24 +28,38 @@ hr {
 	border: 1px solid #000000;
 }
 
+p {
+	margin: 0;
+}
+
 #header-left {
 	display:inline-block;
 	vertical-align: top;
-	width:40%;
+	width:28em;
 }
 
 #header-right {
 	display:inline-block;
 	vertical-align: top;
-	width:40%;
+	width:28em;
+}
+
+.full-fill {
+	width:20em;
+	padding: 0.3em;
+	padding-left: 1em;
+}
+
+.half-fill {
+	width:8em;
+	padding: 1em;
 }
 
 .header-box {
 	display:inline-block;
-	width: 100% auto;
 	border: 1px solid #000000;
-	padding: 2%;
-	margin-right: 5%;
+	margin-right: 1em;
+	margin-bottom: 1em;
 	vertical-align: top;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -57,8 +71,8 @@ hr {
 	display:inline-block;
 	vertical-align: top;
 	text-align: left;
-	margin-right: 1%;
-	width: 40%;
+	margin-right: 0em;
+	width: 28em;
 }
 
 .content-header-box {
