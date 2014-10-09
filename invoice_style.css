@@ -118,6 +118,10 @@ p {
 	border: 0px;
 }
 
+#spec-main {
+	height: 30em;
+}
+
 #footer-address {
 	display:inline-block;
 	width: 18em;
