@@ -63,7 +63,7 @@
 							<!--<th>Momssats</th>-->
 							<!--<th>Nettopris</th>-->
 							<!--<th>Momsbelopp</th>-->
-							<th>Summa</th>
+							<th>Belopp</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -73,9 +73,9 @@
 							<td>{{quantity}}</td>
 							<td>{{price_no_vat}} {{currency}}</td>
 							<!--<td>{{prettyVat}}</td>-->
-							<!--<td>{{sumExVat}} {{currency}}</td>-->
+							<td>{{sumExVat}} {{currency}}</td>
 							<!--<td>{{sumVat}} {{currency}}</td>-->
-							<td>{{sumInclVat}} {{currency}}</td>
+							<!--<td>{{sumInclVat}} {{currency}}</td>-->
 						</tr>
 						{{/products}}
 					</tbody>
@@ -86,8 +86,8 @@
 				<table id="sum-table" class="no-border">
 					<thead>
 						<tr>
-							<th>Netto</th>
-							<th>Exkl Moms</th>
+							<th>Brutto</th>
+							<th>Inkl Moms</th>
 							<th>Moms %</th>
 							<th>Moms {{currency}}</th>
 							<th>ATT BETALA</th>
@@ -96,8 +96,8 @@
 					<tbody>
 						<tr>
 							{{#product_aggr}}
-							<td>{{totalSum}}</td>
 							<td>{{totalExclVat}}</td>
+							<td>{{totalSum}}</td>
 							<td>25 %</td>
 							<td>{{totalVat}}</td>
 							<td id="totalSum">{{totalSum}}</td>
