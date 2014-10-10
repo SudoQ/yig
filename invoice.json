@@ -50,13 +50,13 @@
 	"products":[
 		{
 			"description": "A nice product",
-			"price_no_vat": 100,
+			"price_no_vat": 100.0,
 			"quantity": 2,
 			"vat": 0.25
 		},
 		{
 			"description": "Another nice product",
-			"price_no_vat": 200,
+			"price_no_vat": 200.0,
 			"quantity": 1,
 			"vat": 0.25
 		}
