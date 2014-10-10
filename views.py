@@ -76,22 +76,32 @@ class Invoice(object):
 		return self._json['customer_info']['address']['city']
 
 	# Products
-
 	def products(self):
+		resList = []
 		for product in self._json['products']:
+			resDir = dict(product)
 			# Calculate sum
 			product['sumExVat'] = product['price_no_vat'] * product['quantity']
+			resDir['sumExVat'] = str(product['price_no_vat'] * product['quantity']).replace(".",",")
 
 			# Calculate sum of vat
 			product['sumVat'] = product['sumExVat'] * product['vat']
+			resDir['sumVat'] = str(product['sumExVat'] * product['vat']).replace(".",",")
 
 			# Calculate total sum including vat
 			product['sumInclVat'] = product['sumExVat'] + product['sumVat']
+			resDir['sumInclVat'] = str(product['sumExVat'] + product['sumVat']).replace(".",",")
 
 			# Pretty Vat percentage
 			product['prettyVat'] = "%d %%"%(product['vat']*100)
+			resDir['prettyVat'] = str("%d %%"%(product['vat']*100)).replace(".",",")
 
-		return self._json['products']
+			resDir['price_no_vat'] = str(product['price_no_vat']).replace(".", ",")
+
+			resList.append(resDir)
+
+		#return self._json['products']
+		return resList
 
 	def currency(self):
 		return self._json['general_spec']['currency']
@@ -104,9 +114,9 @@ class Invoice(object):
 		return invoiceDate + dt
 
 	def product_aggr(self):
-		self._json['product_aggr']['totalSum'] = self._totalSum
-		self._json['product_aggr']['totalVat'] = self._totalVat
-		self._json['product_aggr']['totalExclVat'] = self._totalSum - self._totalVat
+		self._json['product_aggr']['totalSum'] = str(self._totalSum).replace(".",",")
+		self._json['product_aggr']['totalVat'] = str(self._totalVat).replace(".",",")
+		self._json['product_aggr']['totalExclVat'] = str(self._totalSum - self._totalVat).replace(".",",")
 		return self._json['product_aggr']
 
 	# Helper functions
