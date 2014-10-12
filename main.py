@@ -4,7 +4,9 @@
 import pystache as ps
 import sys
 import json
-from views import Invoice
+import imp
+views = imp.load_source('views', 'swedish/views.py')
+#from views import Invoice
 
 def main():
 	configFile = "invoice.json"
@@ -16,7 +18,7 @@ def main():
 	f = open(configFile, "r")
 	file_content = f.read()
 	content = json.loads(file_content)
-	invoice = Invoice(content)
+	invoice = views.Invoice(content)
 	renderer = ps.Renderer(file_encoding="utf-8", string_encoding="utf-8")
 	html = renderer.render(invoice)
 	fout = open(htmlFile, "w")
