@@ -1,7 +1,7 @@
 waig
 ====
 
-The Walrus Approved Invoice Generator. So simple a walrus could use it!
+Your Invoice Generator
 
 The generator uses basic invoice templates and configuration files to generate fancy PDF invoices.
 
