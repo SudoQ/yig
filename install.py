@@ -13,10 +13,15 @@ def createDir(directory):
 	else:
 		os.makedirs(directory)
 
+def touchFile(filepath):
+	os.system("touch %s"%(filepath))
+
 def copyFile(srcDir, dstDir, filename):
 	# Copy CSS file to invoices directory
 	src = path.join(srcDir, filename)
 	dst = path.join(dstDir, filename)
+
+	touchFile(src)
 
 	if not path.exists(src):
 		print "Source file %s does not exist"%(src)
