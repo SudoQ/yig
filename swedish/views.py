@@ -129,12 +129,18 @@ class Invoice(object):
 	def aggrProducts(self):
 		resList = []
 		for product in self.products():
-			resDir = {
+			"""resDir = {
 				"description": product.description(),
 				"price_no_vat": product.priceNoVat(),
 				"quantity": product.quantity(),
 				"vat": product.vat()
 			}
+			"""
+			resDir = {}
+
+			resDir['description'] = product.description()
+			print resDir['description']
+
 			# Calculate sum
 			sumExVat = product.priceNoVat() * product.quantity()
 			resDir['sumExVat'] = str(product.priceNoVat() * product.quantity()).replace(".",",")
@@ -152,6 +158,8 @@ class Invoice(object):
 			resDir['prettyVat'] = str("%d %%"%(product.vat()*100)).replace(".",",")
 
 			resDir['price_no_vat'] = str(product.priceNoVat()).replace(".", ",")
+
+			resDir['quantity'] = str(product.quantity()).replace(".",",")
 
 			resList.append(resDir)
 
