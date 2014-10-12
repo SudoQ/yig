@@ -10,7 +10,6 @@ from invoice_spec import *
 class Invoice(object):
 	def __init__(self, content):
 		self._json = content
-		self._json['product_aggr'] = {}
 
 		self._generalSpec = GeneralSpec(content['general_spec'])
 		self._invoiceSpec = InvoiceSpec(content['invoice_spec'])
@@ -129,13 +128,6 @@ class Invoice(object):
 	def aggrProducts(self):
 		resList = []
 		for product in self.products():
-			"""resDir = {
-				"description": product.description(),
-				"price_no_vat": product.priceNoVat(),
-				"quantity": product.quantity(),
-				"vat": product.vat()
-			}
-			"""
 			resDir = {}
 
 			resDir['description'] = product.description()
@@ -182,18 +174,12 @@ class Invoice(object):
 	def totalVat(self):
 		return self._totalVat
 
-	def product_aggr(self):
-		self._json['product_aggr']['totalSum'] = str(self.totalSum()).replace(".",",")
-		self._json['product_aggr']['totalVat'] = str(self.totalVat()).replace(".",",")
-		self._json['product_aggr']['totalExclVat'] = str(self.totalSum() - self.totalVat()).replace(".",",")
-		return self._json['product_aggr']
-	"""
-	# Helper functions
-	def dateToString(self, json):
-		zeroPrefix = (lambda s: "0" + str(s) if int(s) < 10 else s)
-		strDate = map(zeroPrefix, (json['year'], json['month'], json['day']))
-		return "%s-%s-%s"%(strDate[0], strDate[1], strDate[2])
-	"""
+	def productSum(self):
+		productSum = {}
+		productSum['totalSum'] = str(self.totalSum()).replace(".",",")
+		productSum['totalVat'] = str(self.totalVat()).replace(".",",")
+		productSum['totalExclVat'] = str(self.totalSum() - self.totalVat()).replace(".",",")
+		return productSum
 
 	def sumProducts(self):
 		self._totalSum = 0
