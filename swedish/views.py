@@ -111,7 +111,6 @@ class Invoice(object):
 			resDir = {}
 
 			resDir['description'] = product.description()
-			print resDir['description']
 
 			# Calculate sum
 			sumExVat = product.priceNoVat() * product.quantity()
