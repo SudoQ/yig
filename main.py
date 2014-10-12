@@ -9,7 +9,7 @@ views = imp.load_source('views', 'swedish/views.py')
 #from views import Invoice
 
 def main():
-	configFile = "invoice.json"
+	configFile = "invoice.sample.json"
 	htmlFile = "invoice.html"
 	if len(sys.argv) == 2 :
 		configFile = sys.argv[1]
