@@ -38,90 +38,70 @@ class Invoice(object):
 
 	# General Specifications
 	def paymentTerms(self):
-		#return self._json['general_spec']['payment_terms']
 		return self.generalSpec().paymentTerms()
 
 	# Invoice Specifications
 	def companyRef(self):
-		#return self._json['invoice_spec']['ref']
 		return self.invoiceSpec().ref()
 
 	def invoiceDate(self):
-		#return self.dateToString(self._json['invoice_spec']['invoice_date'])
 		return self.invoiceSpec().invoiceDate()
 
 	def invoiceId(self):
-		#return self._json['invoice_spec']['invoice_id']
 		return self.invoiceSpec().invoiceId()
 
 	# Company information
 	def companyName(self):
-		#return self._json['company_info']['name']
 		return self.companyInfo().name()
 
 	# Company Address
 	def companyStreet(self):
-		#return self._json['company_info']['address']['street']
 		return self.companyInfo().street()
 
 	def companyPostal(self):
-		#return self._json['company_info']['address']['postal']
 		return self.companyInfo().postal()
 
 	def companyCity(self):
-		#return self._json['company_info']['address']['city']
 		return self.companyInfo().city()
 
 	# Company contact
 	def companyPhone(self):
-		#return self._json['company_info']['contact']['phone']
 		return self.companyInfo().phone()
 
 	def companyMobile(self):
-		#return self._json['company_info']['contact']['mobile']
 		return self.companyInfo().mobile()
 
 	def companyEmail(self):
-		#return self._json['company_info']['contact']['email']
 		return self.companyInfo().email()
 
 	def companyWeb(self):
-		#return self._json['company_info']['contact']['web']
 		return self.companyInfo().web()
 
 	# Company identification
 	def companyOrgId(self):
-		#return self._json['company_info']['id']['org_id']
 		return self.companyInfo().orgId()
 
 	def companyVatId(self):
-		#return self._json['company_info']['id']['vat_id']
 		return self.companyInfo().vatId()
 
 	def companyBankId(self):
-		#return self._json['company_info']['id']['bank_id']
 		return self.companyInfo().bankId()
 
 	# Customer information
 	def customerName(self):
-		#return self._json['customer_info']['name']
 		return self.customerInfo().name()
 
 	def customerRef(self):
-		#return self._json['customer_info']['ref']
 		return self.customerInfo().ref()
 
 	# Customer Address
 	def customerStreet(self):
-		#return self._json['customer_info']['address']['street']
 		return self.customerInfo().street()
 
 	def customerPostal(self):
-		#return self._json['customer_info']['address']['postal']
 		return self.customerInfo().postal()
 
 	def customerCity(self):
-		#return self._json['customer_info']['address']['city']
 		return self.customerInfo().city()
 
 	# Products
@@ -155,16 +135,13 @@ class Invoice(object):
 
 			resList.append(resDir)
 
-		#return self._json['products']
 		return resList
 
 	def currency(self):
-		#return self._json['general_spec']['currency']
 		return self.generalSpec().currency()
 
 	def expirationDate(self):
 		# invoice date + payment terms
-		#return invoiceDate + dt
 		dt = datetime.timedelta(days=int(self.paymentTerms()))
 		return self.invoiceSpec().invoiceDate() + dt
 
