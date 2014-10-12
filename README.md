@@ -1,4 +1,4 @@
-waig
+YIG
 ====
 
 Your Invoice Generator
